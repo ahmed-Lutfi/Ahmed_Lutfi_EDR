@@ -118,7 +118,7 @@
             Series of denied outbound connections to low-frequency IP space.
           </td>
         </tr>
-        <tr data-level="low">
+        {% comment %} <tr data-level="low">
           <td>07:18</td>
           <td><span class="badge badge--low">Low</span></td>
           <td>lab-sensor-01</td>
@@ -127,7 +127,19 @@
             Endpoint reporting sporadic signals from a lab environment
             segment.
           </td>
-        </tr>
+        </tr> {% endcomment %}
+        {% for alert in alerts_list %}
+        
+          <tr data-level="high">
+          <td>{{alert.system_time}} </td>
+          <td><span class="badge badge--high">high</span></td>
+          <td>{{alert.computer}} </td>
+          <td>--------</td>
+          <td>
+            {{alert.description}}
+          </td>
+         {% endfor %}
+          
       </tbody>
     </table>
   </section>
