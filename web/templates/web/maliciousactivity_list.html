@@ -88,14 +88,14 @@
         <table class="dash-table dash-table--dense">
           <thead>
             <tr>
-              <th>Rule name</th>
-              <th>Level</th>
-              <th>Scope</th>
-              <th>Sample tag</th>
+              <th>Activity ID</th>
+              <th>Event ID</th>
+              <th>Type</th>
+              <th>Command Line</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            {% comment %} <tr>
               <td>Lateral movement burst</td>
               <td><span class="badge badge--high">High</span></td>
               <td>Internal workstations</td>
@@ -112,7 +112,18 @@
               <td><span class="badge badge--low">Low</span></td>
               <td>Gateways &amp; edge</td>
               <td>Rare-destination pattern</td>
+            </tr> {% endcomment %}
+
+            
+            {% for mal in maliciousactivity_list %}
+               <tr>
+              <td>{{mal.activity_id}}</td>
+              <td>{{mal.event_id}}</span></td>
+              <td>{{mal.get_activity_type_display}}</td>
+              <td>{{mal.command_line}}</td>
             </tr>
+            {% endfor %}
+              
           </tbody>
         </table>
       </div>

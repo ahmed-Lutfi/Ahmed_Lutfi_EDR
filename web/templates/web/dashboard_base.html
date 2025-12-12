@@ -49,18 +49,18 @@
               <span class="dash-nav__text">Alerts</span>
             </a>
             <a
-              href="{% url 'web:dashboard_endpoints' %}"
+              href="{% url 'web:endpoints_list' %}"
               class="dash-nav__item {% if section == 'endpoints' %}dash-nav__item--active{% endif %}"
             >
               <span class="dash-nav__dot"></span>
               <span class="dash-nav__text">Endpoints</span>
             </a>
             <a
-              href="{% url 'web:dashboard_rules' %}"
+              href="{% url 'web:maliciousactivity_list' %}"
               class="dash-nav__item {% if section == 'rules' %}dash-nav__item--active{% endif %}"
             >
               <span class="dash-nav__dot"></span>
-              <span class="dash-nav__text">Rules</span>
+              <span class="dash-nav__text">Activities</span>
             </a>
             <a
               href="{% url 'web:dashboard_users' %}"

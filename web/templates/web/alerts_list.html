@@ -74,12 +74,12 @@
           <th>Time</th>
           <th>Level</th>
           <th>Endpoint</th>
-          <th>Rule</th>
+          <th>Integrity Level</th>
           <th>Summary</th>
         </tr>
       </thead>
       <tbody>
-        <tr data-level="high">
+        {% comment %} <tr data-level="high">
           <td>09:42</td>
           <td><span class="badge badge--high">High</span></td>
           <td>workstation-12</td>
@@ -117,27 +117,39 @@
           <td>
             Series of denied outbound connections to low-frequency IP space.
           </td>
-        </tr>
-        {% comment %} <tr data-level="low">
-          <td>07:18</td>
-          <td><span class="badge badge--low">Low</span></td>
-          <td>lab-sensor-01</td>
-          <td>Low-signal sensor</td>
-          <td>
-            Endpoint reporting sporadic signals from a lab environment
-            segment.
-          </td>
         </tr> {% endcomment %}
         {% for alert in alerts_list %}
         
-          <tr data-level="high">
+        {% if alert.alert.endpoint.activity.activity_type == 0 %}
+          <tr data-level="low">
           <td>{{alert.system_time}} </td>
-          <td><span class="badge badge--high">high</span></td>
+          <td><span class="badge badge--low">low (information)</span></td>
           <td>{{alert.computer}} </td>
-          <td>--------</td>
+          <td> {{alert.integrity_level}} </td>
           <td>
             {{alert.description}}
           </td>
+          {% elif alert.alert.endpoint.activity.activity_type == 1 %}
+          <tr data-level="high">
+          <td>{{alert.system_time}} </td>
+          <td><span class="badge badge--high">high (EoRS)</span></td>
+          <td>{{alert.computer}} </td>
+          <td> {{alert.integrity_level}} </td>
+          <td>
+            {{alert.description}}
+          </td>
+          {% else %}
+          <tr data-level="high">
+          <td>{{alert.system_time}} </td>
+          <td><span class="badge badge--high">high (EoTH)</span></td>
+          <td>{{alert.computer}} </td>
+          <td> {{alert.integrity_level}} </td>
+          <td>
+            {{alert.description}}
+          </td>
+
+        {% endif %}
+          
          {% endfor %}
           
       </tbody>

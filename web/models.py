@@ -8,7 +8,7 @@ class Endpoints(models.Model):
     user = models.CharField(max_length=200)
     computer = models.CharField(max_length=200)
     group_id = models.CharField(max_length=100)
-    system_time = models.DateTimeField()
+    last_signal = models.DateTimeField()
     activity = models.ForeignKey(
         "MaliciousActivity", on_delete=models.SET_NULL, null=True, blank=True
     )
@@ -22,7 +22,7 @@ class Alerts(models.Model):
     integrity_level = models.CharField(max_length=200)
     role_name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
-    last_signal = models.DateTimeField()
+    system_time = models.DateTimeField()
     endpoint = models.ForeignKey(
         "Endpoints",
         on_delete=models.CASCADE,
@@ -52,7 +52,7 @@ class MaliciousActivity(models.Model):
 
     @property
     def system_time(self):
-        return self.endpoint.system_time
+        return self.alert.system_time
 
     def __str__(self):
         return f"id:{self.activity_id}-{self.activity_type}"

@@ -67,14 +67,13 @@
       <thead>
         <tr>
           <th>Endpoint</th>
-          <th>Environment</th>
-          <th>Platform</th>
-          <th>Posture</th>
+          <th>Group ID</th>
+          <th>User</th>
           <th>Last signal</th>
         </tr>
       </thead>
       <tbody>
-        <tr data-env="production">
+        {% comment %} <tr data-env="production">
           <td>workstation-12</td>
           <td>Production</td>
           <td>Windows</td>
@@ -107,8 +106,20 @@
           <td>Production</td>
           <td>Appliance</td>
           <td><span class="badge badge--warn">Edge pressure</span></td>
-          <td>1 minute ago</td>
+          <td>1 minute ago</td> 
+
+        </tr>{% endcomment %}
+        
+        {% for end in endpoints_list %}
+          <tr data-env="">
+          <td>{{ end.computer }}</td>
+          <td>{{end.group_id}} </td>
+          <td>{{end.user}}</td>
+          <td>{{ end.last_signal }}</td>
         </tr>
+        {% endfor %}
+          
+        
       </tbody>
     </table>
   </section>
