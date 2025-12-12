@@ -1,0 +1,126 @@
+{% extends "web/base.html" %}
+
+{% block title %}Sign up · EDR Mini{% endblock %}
+{% block body_class %}layout-auth{% endblock %}
+
+{% block content %}
+
+<article class="auth" data-reveal>
+  <div class="auth-shell">
+
+    <div class="auth-card">
+      <!-- Left side -->
+      <div class="auth-side">
+        <p class="auth-eyebrow">Create account</p>
+        <h1 class="auth-title">Join EDR Mini</h1>
+        <p class="auth-text">
+          Build your own detection experience. Your profile will let you access
+          dashboards, alerts, and more—depending on your future role.
+        </p>
+
+        <div class="auth-meta">
+          <div class="auth-meta-item">
+            <p class="auth-meta-label">Access</p>
+            <p class="auth-meta-value">Dashboard-ready</p>
+          </div>
+          <div class="auth-meta-item">
+            <p class="auth-meta-label">Phase</p>
+            <p class="auth-meta-value">Static prototype</p>
+          </div>
+        </div>
+
+        <div class="auth-note">
+          <p class="auth-note-label">Why sign up?</p>
+          <p class="auth-note-text">
+            This page prepares the flow for future authentication wiring.
+            No data is stored yet—design-only mode.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right side -->
+      <form class="auth-form">
+        <div class="auth-form__body">
+          <header class="auth-form__header">
+            <h2 class="auth-form__title">Create your account</h2>
+            <p class="auth-form__subtitle">
+              All fields are part of the static UX prototype.
+            </p>
+          </header>
+
+          <!-- Full name -->
+          <div class="form-field">
+            <label class="form-label" for="name">Full name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              class="form-input"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="form-input"
+              placeholder="example@mail.com"
+            />
+          </div>
+
+          <!-- Username -->
+          <div class="form-field">
+            <label class="form-label" for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              class="form-input"
+              placeholder="Choose a username"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="form-field">
+            <label class="form-label" for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-input"
+              placeholder="••••••••"
+            />
+          </div>
+
+          <!-- Confirm password -->
+          <div class="form-field">
+            <label class="form-label" for="password2">Confirm password</label>
+            <input
+              id="password2"
+              name="password2"
+              type="password"
+              class="form-input"
+              placeholder="Repeat password"
+            />
+          </div>
+
+          <button class="btn btn--primary auth-submit" type="submit">
+            Create account
+          </button>
+
+          <div class="auth-footer-links">
+            <span class="auth-footer-muted">Already have an account?</span>
+            <a href="{% url 'web:login' %}" class="auth-footer-link">Sign in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</article>
+
+{% endblock %}

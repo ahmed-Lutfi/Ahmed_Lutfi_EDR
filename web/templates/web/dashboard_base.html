@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>{% block title %}Dashboard · EDR Mini{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/effects.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/dashboard.css' %}" />
+
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="layout-dashboard">
+    <div class="dash-shell">
+      <!-- Sidebar -->
+      <aside class="dash-sidebar" data-dash-sidebar>
+        <div class="dash-sidebar__inner">
+          <a href="{% url 'web:index' %}" class="brand">
+            <span class="brand__mark">EM</span>
+            <span class="brand__text">
+              <span class="brand__title">EDR Mini</span>
+              <span class="brand__subtitle">
+                Endpoint Detection &amp; Response
+              </span>
+            </span>
+          </a>
+
+          <nav class="dash-nav" aria-label="Dashboard">
+            <p class="dash-nav__label">Overview</p>
+            <a
+              href="{% url 'web:dashboard_overview' %}"
+              class="dash-nav__item {% if section == 'overview' %}dash-nav__item--active{% endif %}"
+            >
+              <span class="dash-nav__dot"></span>
+              <span class="dash-nav__text">Overview</span>
+            </a>
+
+            <p class="dash-nav__label">Collections</p>
+            <a
+              href="{% url 'web:dashboard_alerts' %}"
+              class="dash-nav__item {% if section == 'alerts' %}dash-nav__item--active{% endif %}"
+            >
+              <span class="dash-nav__dot"></span>
+              <span class="dash-nav__text">Alerts</span>
+            </a>
+            <a
+              href="{% url 'web:dashboard_endpoints' %}"
+              class="dash-nav__item {% if section == 'endpoints' %}dash-nav__item--active{% endif %}"
+            >
+              <span class="dash-nav__dot"></span>
+              <span class="dash-nav__text">Endpoints</span>
+            </a>
+            <a
+              href="{% url 'web:dashboard_rules' %}"
+              class="dash-nav__item {% if section == 'rules' %}dash-nav__item--active{% endif %}"
+            >
+              <span class="dash-nav__dot"></span>
+              <span class="dash-nav__text">Rules</span>
+            </a>
+            <a
+              href="{% url 'web:dashboard_users' %}"
+              class="dash-nav__item {% if section == 'users' %}dash-nav__item--active{% endif %}"
+            >
+              <span class="dash-nav__dot"></span>
+              <span class="dash-nav__text">Users</span>
+            </a>
+          </nav>
+
+          <div class="dash-sidebar__footer">
+            <p class="dash-sidebar__badge">Static · Design phase</p>
+            <p class="dash-sidebar__hint">
+              This dashboard is a static UX prototype. No live data yet.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main area -->
+      <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar" data-dash-topbar>
+          <button
+            class="dash-topbar__menu"
+            type="button"
+            aria-label="Toggle navigation"
+            data-dash-toggle
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="dash-topbar__breadcrumb">
+            <span class="dash-topbar__eyebrow">Dashboard</span>
+            <span class="dash-topbar__title">
+              {% block dash_title %}Detection surface{% endblock %}
+            </span>
+          </div>
+
+          <div class="dash-topbar__actions">
+            <div class="dash-role" data-dash-role-group>
+              <button
+                type="button"
+                class="dash-role__pill dash-role__pill--active"
+                data-role-pill
+              >
+                Owner
+              </button>
+              <button
+                type="button"
+                class="dash-role__pill"
+                data-role-pill
+              >
+                Analyst
+              </button>
+              <button
+                type="button"
+                class="dash-role__pill"
+                data-role-pill
+              >
+                Read-only
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content -->
+        <section class="dash-main__content">
+          {% block content %}{% endblock %}
+        </section>
+      </main>
+    </div>
+
+    <script src="{% static 'web/js/dashboard.js' %}" defer></script>
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

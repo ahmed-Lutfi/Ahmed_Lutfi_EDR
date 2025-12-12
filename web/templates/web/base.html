@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>{% block title %}EDR Mini{% endblock %}</title>
+
+    <!-- Core styles -->
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/effects.css' %}" />
+
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="{% block body_class %}layout-default{% endblock %}">
+    <div class="page-shell">
+      <!-- Top progress bar -->
+      <div class="scroll-indicator">
+        <div class="scroll-indicator__bar"></div>
+      </div>
+
+      <!-- Header -->
+      <header class="site-header" data-header>
+        <div class="site-header__inner">
+          <!-- Brand -->
+          <a href="{% url 'web:index' %}" class="brand">
+            <span class="brand__mark">EM</span>
+            <span class="brand__text">
+              <span class="brand__title">EDR Mini</span>
+              <span class="brand__subtitle">
+                Endpoint Detection &amp; Response
+              </span>
+            </span>
+          </a>
+
+          <!-- Primary navigation -->
+          <nav class="site-nav" aria-label="Primary navigation">
+            <ul class="site-nav__list" data-nav-menu>
+              <li class="site-nav__item">
+                <a
+                  href="{% url 'web:index' %}#overview"
+                  class="site-nav__link"
+                  data-nav-link
+                >
+                  Overview
+                </a>
+              </li>
+              <li class="site-nav__item">
+                <a
+                  href="{% url 'web:index' %}#features"
+                  class="site-nav__link"
+                  data-nav-link
+                >
+                  Features
+                </a>
+              </li>
+              <li class="site-nav__item">
+                <a
+                  href="{% url 'web:index' %}#docs"
+                  class="site-nav__link"
+                  data-nav-link
+                >
+                  Docs
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Header actions -->
+          <div class="site-header__cta">
+            <a href="{% url 'web:login' %}" class="btn btn--ghost">
+              Sign in
+            </a>
+            <a href="{% url 'web:index' %}#demo" class="btn btn--primary">
+              Watch demo
+            </a>
+          </div>
+
+          <!-- Mobile nav toggle -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            data-nav-toggle
+          >
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main content -->
+      <main id="overview" class="site-main">
+        {% block content %}{% endblock %}
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__col">
+            <p class="footer-label">EDR Mini</p>
+            <p class="footer-copy">
+              A minimal endpoint detection &amp; response experience for
+              security teams and lab environments.
+            </p>
+          </div>
+
+          <div class="site-footer__col">
+            <p class="footer-label">Navigation</p>
+            <ul class="footer-links">
+              <li><a href="{% url 'web:index' %}#overview">Overview</a></li>
+              <li><a href="{% url 'web:index' %}#features">Features</a></li>
+              <li><a href="{% url 'web:index' %}#endpoints">Endpoints</a></li>
+              <li><a href="{% url 'web:index' %}#alerts">Alerts</a></li>
+              <li><a href="{% url 'web:index' %}#docs">Docs</a></li>
+            </ul>
+          </div>
+
+          <div class="site-footer__col">
+            <p class="footer-label">Status</p>
+            <p class="footer-copy footer-copy--muted">
+              Design-first static web phase &middot; No live data yet.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="{% static 'web/js/main.js' %}" defer></script>
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

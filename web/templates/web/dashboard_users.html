@@ -1,0 +1,148 @@
+{% extends "web/dashboard_base.html" %}
+
+{% block title %}Users · EDR Mini{% endblock %}
+{% block dash_title %}Users & roles{% endblock %}
+
+{% block content %}
+
+<div class="dash-page" data-dash-reveal>
+  <!-- Header -->
+  <header class="dash-section-header">
+    <p class="dash-section-kicker">Users</p>
+    <h1 class="dash-section-title">
+      Three roles sharing a single detection surface.
+    </h1>
+    <p class="dash-section-text">
+      This page sketches how users and roles might be expressed in the interface.
+      Everything here is simulated: the focus is on language, rhythm, and layout.
+    </p>
+  </header>
+
+  <!-- Role cards -->
+  <section
+    class="dash-grid dash-grid--3"
+    data-dash-reveal
+    style="--reveal-delay: 40ms"
+  >
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Role</p>
+        <h2 class="dash-card__title">Owner</h2>
+      </header>
+      <p class="dash-card__text">
+        Owns the system: rules, users, and environments. Decides what the
+        detection surface should feel like and where it is allowed to make noise.
+      </p>
+      <p class="dash-card__meta">
+        Scope: rules catalogue · environments · user management.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Role</p>
+        <h2 class="dash-card__title">Analyst</h2>
+      </header>
+      <p class="dash-card__text">
+        Lives inside alerts and endpoints. Investigates, triages, and tunes
+        rules, but does not change the overall system framing.
+      </p>
+      <p class="dash-card__meta">
+        Scope: alerts · endpoints · investigations · rule feedback.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Role</p>
+        <h2 class="dash-card__title">Read-only</h2>
+      </header>
+      <p class="dash-card__text">
+        Follows the story without changing it. Can see the same surface and
+        language, but cannot edit anything underneath.
+      </p>
+      <p class="dash-card__meta">
+        Scope: dashboards · reports · read-only exports.
+      </p>
+    </article>
+  </section>
+
+  <!-- Users table -->
+  <section class="dash-grid dash-grid--2" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Sample users</h2>
+        <p class="dash-card__subtitle">
+          A static snapshot of how users and roles could be rendered.
+        </p>
+      </header>
+
+      <div class="dash-table-wrapper">
+        <table class="dash-table dash-table--dense">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Handle</th>
+              <th>Role</th>
+              <th>Scope</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>System Owner</td>
+              <td>@owner</td>
+              <td><span class="badge badge--owner">Owner</span></td>
+              <td>Rules, users, environments</td>
+              <td><span class="badge badge--ok">Active</span></td>
+            </tr>
+            <tr>
+              <td>Security Analyst</td>
+              <td>@analyst</td>
+              <td><span class="badge badge--analyst">Analyst</span></td>
+              <td>Alerts, endpoints, investigations</td>
+              <td><span class="badge badge--ok">Active</span></td>
+            </tr>
+            <tr>
+              <td>Read-only Stakeholder</td>
+              <td>@readonly</td>
+              <td><span class="badge badge--readonly">Read-only</span></td>
+              <td>Dashboards, reports</td>
+              <td><span class="badge badge--low">Occasional</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Notes -->
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">How roles and UI relate</h2>
+        <p class="dash-card__subtitle">
+          Visual roles first, permission model later.
+        </p>
+      </header>
+      <ul class="dash-list">
+        <li>
+          The role pills in the topbar and the table rows here are purely
+          visual in this phase – no real permissions are enforced yet.
+        </li>
+        <li>
+          In a live system, each user would come from your identity provider,
+          with roles mapped to groups or claims.
+        </li>
+        <li>
+          The aim is to keep the language stable so that wiring real auth later
+          does not require a redesign.
+        </li>
+        <li>
+          This page can grow into a full "People & access" section without
+          changing its core layout.
+        </li>
+      </ul>
+    </article>
+  </section>
+</div>
+
+{% endblock %}

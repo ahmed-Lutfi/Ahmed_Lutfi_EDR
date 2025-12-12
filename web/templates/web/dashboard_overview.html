@@ -1,0 +1,164 @@
+{% extends "web/dashboard_base.html" %}
+
+{% block title %}Overview · EDR Mini{% endblock %}
+{% block dash_title %}Detection surface overview{% endblock %}
+
+{% block content %}
+
+<div class="dash-page" data-dash-reveal>
+  <!-- Intro -->
+  <header class="dash-section-header">
+    <p class="dash-section-kicker">Overview</p>
+    <h1 class="dash-section-title">
+      A static overview of your simulated detection surface.
+    </h1>
+    <p class="dash-section-text">
+      All numbers and tables on this page are sample data only. The goal is to
+      shape the language and layout before wiring any backend or agents.
+    </p>
+  </header>
+
+  <!-- Metrics row -->
+  <section
+    class="dash-metrics-row"
+    data-dash-reveal
+    style="--reveal-delay: 40ms"
+  >
+    <article class="dash-metric">
+      <p class="dash-metric-label">Alerts today</p>
+      <p class="dash-metric-value">27</p>
+      <p class="dash-metric-caption">Sample volume · Static only</p>
+    </article>
+    <article class="dash-metric">
+      <p class="dash-metric-label">Endpoints online</p>
+      <p class="dash-metric-value">184</p>
+      <p class="dash-metric-caption">Across three environments</p>
+    </article>
+    <article class="dash-metric">
+      <p class="dash-metric-label">Active rules</p>
+      <p class="dash-metric-value">36</p>
+      <p class="dash-metric-caption">Owner-managed catalogue</p>
+    </article>
+  </section>
+
+  <!-- Grid: recent alerts + system notes -->
+  <section class="dash-grid dash-grid--2" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Recent alerts (sample)</h2>
+        <p class="dash-card__subtitle">
+          A vertical slice of how alerts might read before adding any charts.
+        </p>
+      </header>
+
+      <div class="dash-table-wrapper">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Endpoint</th>
+              <th>Summary</th>
+              <th>Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:42</td>
+              <td>workstation-12</td>
+              <td>Suspicious credential usage across segments.</td>
+              <td><span class="badge badge--high">High</span></td>
+            </tr>
+            <tr>
+              <td>08:17</td>
+              <td>db-node-03</td>
+              <td>Unexpected PowerShell spawned by web server.</td>
+              <td><span class="badge badge--medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>07:51</td>
+              <td>gateway-edge</td>
+              <td>Denied outbound connections to rare IP space.</td>
+              <td><span class="badge badge--low">Low</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">System notes</h2>
+        <p class="dash-card__subtitle">
+          How to read this early-stage dashboard without real data.
+        </p>
+      </header>
+
+      <ul class="dash-list">
+        <li>
+          All values are simulated. This page is a UX sketch, not an
+          incident-response surface yet.
+        </li>
+        <li>
+          Text is treated as the primary UI. Visuals are only added where they
+          reduce cognitive load.
+        </li>
+        <li>
+          Alerts, endpoints, rules, and users share the same language and
+          rhythm to stay coherent.
+        </li>
+        <li>
+          Role pills in the top bar (Owner, Analyst, Read-only) currently
+          express intent only, not permissions.
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Environment / posture snapshot -->
+  <section class="dash-grid dash-grid--3" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Environment</p>
+        <h2 class="dash-card__title">Production pressure</h2>
+      </header>
+      <p class="dash-card__text">
+        Most simulated alerts originate from production workstations and
+        gateways. The layout is tuned for reading rather than scrolling through
+        noise.
+      </p>
+      <p class="dash-card__meta">
+        12 sample endpoints · 3 sample services · Text-first layout.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Signals</p>
+        <h2 class="dash-card__title">From alert to endpoint</h2>
+      </header>
+      <p class="dash-card__text">
+        The Overview page is where alerts, endpoints, rules, and users meet.
+        Later pages go deeper into each collection.
+      </p>
+      <p class="dash-card__meta">
+        Designed to show the "shape" of the product in a single glance.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Next steps</p>
+        <h2 class="dash-card__title">Ready for live wiring</h2>
+      </header>
+      <p class="dash-card__text">
+        Once the backend and agent are ready, each block on this page can be
+        connected to real queries and collections without changing the layout.
+      </p>
+      <p class="dash-card__meta">
+        Keeps the bridge clean between UX prototype and real EDR logic.
+      </p>
+    </article>
+  </section>
+</div>
+
+{% endblock %}

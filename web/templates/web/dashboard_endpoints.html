@@ -1,0 +1,165 @@
+{% extends "web/dashboard_base.html" %}
+
+{% block title %}Endpoints · EDR Mini{% endblock %}
+{% block dash_title %}Endpoints inventory{% endblock %}
+
+{% block content %}
+
+<div class="dash-page" data-dash-reveal>
+  <!-- Header -->
+  <header class="dash-section-header">
+    <p class="dash-section-kicker">Endpoints</p>
+    <h1 class="dash-section-title">
+      A readable inventory instead of a noisy grid.
+    </h1>
+    <p class="dash-section-text">
+      This page treats each endpoint as a small, readable unit: environment,
+      platform, posture, and last signal. All rows are simulated to shape the
+      UX before any agent is connected.
+    </p>
+  </header>
+
+  <!-- Filters -->
+  <section
+    class="dash-toolbar"
+    data-dash-reveal
+    style="--reveal-delay: 40ms"
+  >
+    <div class="dash-filters" data-env-filter-group>
+      <button
+        type="button"
+        class="dash-filter-pill dash-filter-pill--active"
+        data-env-filter="all"
+      >
+        All environments
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-env-filter="production"
+      >
+        Production
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-env-filter="staging"
+      >
+        Staging
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-env-filter="lab"
+      >
+        Lab
+      </button>
+    </div>
+
+    <p class="dash-toolbar-note">
+      Filters are visual only in this static phase. No live queries yet.
+    </p>
+  </section>
+
+  <!-- Endpoints table -->
+  <section class="dash-table-wrapper" data-dash-reveal>
+    <table class="dash-table dash-table--dense" data-dash-endpoints-table>
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Environment</th>
+          <th>Platform</th>
+          <th>Posture</th>
+          <th>Last signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-env="production">
+          <td>workstation-12</td>
+          <td>Production</td>
+          <td>Windows</td>
+          <td><span class="badge badge--warn">Under pressure</span></td>
+          <td>3 minutes ago</td>
+        </tr>
+        <tr data-env="production">
+          <td>db-node-03</td>
+          <td>Production</td>
+          <td>Linux</td>
+          <td><span class="badge badge--ok">Stable</span></td>
+          <td>7 minutes ago</td>
+        </tr>
+        <tr data-env="staging">
+          <td>laptop-04</td>
+          <td>Staging</td>
+          <td>Windows</td>
+          <td><span class="badge badge--ok">Stable</span></td>
+          <td>12 minutes ago</td>
+        </tr>
+        <tr data-env="lab">
+          <td>lab-sensor-01</td>
+          <td>Lab</td>
+          <td>Linux</td>
+          <td><span class="badge badge--low">Low signal</span></td>
+          <td>41 minutes ago</td>
+        </tr>
+        <tr data-env="production">
+          <td>gateway-edge</td>
+          <td>Production</td>
+          <td>Appliance</td>
+          <td><span class="badge badge--warn">Edge pressure</span></td>
+          <td>1 minute ago</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Cards / narrative -->
+  <section class="dash-grid dash-grid--2" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Why this table looks quiet</h2>
+        <p class="dash-card__subtitle">
+          Less chrome, more signal for each endpoint.
+        </p>
+      </header>
+      <ul class="dash-list">
+        <li>
+          Endpoints are grouped by environment and posture, not by hostname
+          alone.
+        </li>
+        <li>
+          Posture is expressed as short labels such as
+          <strong>Under pressure</strong> or <strong>Stable</strong>, not
+          numeric scores.
+        </li>
+        <li>
+          The goal is to help you scan for “where to look next” in a few
+          seconds.
+        </li>
+        <li>
+          In a live system, each row could link into alerts, recent activity,
+          and attached rules.
+        </li>
+      </ul>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Future integration ideas</h2>
+        <p class="dash-card__subtitle">
+          How this page might behave with real data.
+        </p>
+      </header>
+      <p class="dash-card__text">
+        Environment filters at the top are structured so they can later map to
+        query parameters, tags, or saved views without removing or redesigning
+        the page.
+      </p>
+      <p class="dash-card__meta">
+        Designed as a bridge between UX prototype and EDR backend logic.
+      </p>
+    </article>
+  </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,330 @@
+
+(pycharm:33495): Gtk-WARNING **: 15:16:23.010: Failed to parse /home/ahmed/.config/gtk-3.0/settings.ini: Key file does not have group “Settings”
+2025-12-12 15:16:23,261 [   2362]   WARN - #c.i.i.p.PluginManager - Problems found loading plugins:
+  Plugin 'AI Playground' (intellij.aiplayground) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'CSS' (com.intellij.css) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Data Wrangler' (com.intellij.dataWrangler.plugin) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Database Tools and SQL' (com.intellij.database) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Remote Development Gateway' (com.jetbrains.gateway) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Shared Project Indexes' (intellij.indexing.shared) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'JavaScript and TypeScript' (JavaScript) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Node.js Remote Interpreter' (org.jetbrains.plugins.node-remote-interpreter) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Django' (com.intellij.python.django) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Python' (Pythonid) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'SSH Remote Run' (org.jetbrains.plugins.remote-run) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Tailwind CSS' (com.intellij.tailwindcss) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Time Tracking' (com.intellij.tasks.timeTracking) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'FTP/SFTP/WebDAV Connectivity' (com.jetbrains.plugins.webDeployment) requires plugin with id=com.intellij.modules.ultimate to be enabled
+  Plugin 'Polymer & Web Components' (com.intellij.plugins.webcomponents) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'React' (com.intellij.react) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Stylelint' (com.intellij.stylelint) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Vite' (intellij.vitejs) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Webpack' (intellij.webpack) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Less' (org.jetbrains.plugins.less) has dependency on 'CSS' which cannot be loaded
+  Plugin 'TSLint' (tslint) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Sass' (org.jetbrains.plugins.sass) has dependency on 'CSS' which cannot be loaded
+  Plugin 'Prettier' (intellij.prettierJS) has dependency on 'com.intellij.modules.javascript' which is not installed
+  Plugin 'Next.js' (intellij.nextjs) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'dbt Support' (org.jetbrains.dbt) has dependency on 'Database Tools and SQL' which cannot be loaded
+  Plugin 'JavaScript Debugger' (JavaScriptDebugger) has dependency on 'com.intellij.modules.javascript' which is not installed
+  Plugin 'Shared Indexes for Python' (intellij.python.sharedIndexes) has module dependency 'intellij.indexing.shared.generator' which cannot be loaded or missing
+  Plugin 'Karma' (Karma) has dependency on 'com.intellij.modules.javascript' which is not installed
+  Plugin 'PostCSS' (org.intellij.plugins.postcss) has dependency on 'CSS' which cannot be loaded
+  Plugin 'Styled Components & Styled JSX' (com.deadlock.scsyntax) has dependency on 'CSS' which cannot be loaded
+  Plugin 'DataSpell Custom Cell' (com.intellij.pycharm.ds.jupyter.customCells) has dependency on 'Database Tools and SQL' which cannot be loaded
+  Plugin 'PyScript' (com.jetbrains.python.pyscript) has dependency on 'Python' which cannot be loaded
+  Plugin 'Node.js' (NodeJS) has dependency on 'com.intellij.modules.javascript' which is not installed
+  Plugin 'JavaScript Intention Power Pack' (JSIntentionPowerPack) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Vue.js' (org.jetbrains.plugins.vue) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+  Plugin 'Dev Containers' (org.jetbrains.plugins.docker.gateway) has dependency on 'Remote Development Gateway' which cannot be loaded
+  Plugin 'Angular' (AngularJS) has dependency on 'JavaScript and TypeScript' which cannot be loaded
+2025-12-12 15:16:30,910 [  10011]   WARN - com.github.benmanes.caffeine.cache.LocalAsyncCache - Exception thrown during asynchronous load
+java.util.concurrent.CompletionException: java.net.ConnectException
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:113)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:952)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at com.intellij.util.net.PlatformHttpClient$DelegatingHttpClient.send(PlatformHttpClient.java:337)
+	at com.intellij.ide.RegionUrlMapper.doLoadMappingOrThrow(RegionUrlMapper.java:152)
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:109)
+	... 7 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1042)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:527)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:138)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:94)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:391)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:584)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:428)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:420)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:414)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:456)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:446)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:177)
+	at java.base/java.util.concurrent.CompletableFuture.completeAsync(CompletableFuture.java:2719)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsync(MultiExchange.java:300)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.sendAsync(HttpClientImpl.java:1050)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:931)
+	... 11 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:137)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:145)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:842)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:865)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 34 more
+2025-12-12 15:16:35,185 [  14286]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-12-12 15:16:36,131 [  15232]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-12-12 15:16:36,329 [  15430]   WARN - #c.i.l.u.p.RemoteFeatureDisabler - Failed to get contents
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1042)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http1Exchange.sendHeadersAsync(Http1Exchange.java:312)
+	at java.net.http/jdk.internal.net.http.Exchange.lambda$responseAsyncImpl0$8(Exchange.java:581)
+	at java.net.http/jdk.internal.net.http.Exchange.checkFor407(Exchange.java:452)
+	at java.net.http/jdk.internal.net.http.Exchange.lambda$responseAsyncImpl0$9(Exchange.java:585)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:585)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:428)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:420)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:414)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:456)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:446)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at kotlinx.coroutines.internal.SoftLimitedDispatcher$Worker.run(SoftLimitedDispatcher.kt:130)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1183)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:137)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:145)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:842)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:865)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 27 more
+JCEF_V(16:41:022): Found cef_server binary '/home/ahmed/AppsData/pycharm-2025.2.0.1/jbr/lib/cef_server' via System.getProperty('java.home')=/home/ahmed/AppsData/pycharm-2025.2.0.1/jbr
+JCEF_V(16:41:025): Java is started via native launcher. Found cef_server path /home/ahmed/AppsData/pycharm-2025.2.0.1/jbr/lib/cef_server (via system propety)
+2025-12-12 15:16:41,838 [  20939]   WARN - #c.j.p.p.PyPackagesUpdater - pypi.org
+2025-12-12 15:16:47,280 [  26381]   WARN - #c.j.p.s.f.PythonSdkFlavor - /home/ahmed/python/ML/Chapter6/.venv/bin/python is not executable: File /home/ahmed/python/ML/Chapter6/.venv/bin/python is not found
+2025-12-12 15:16:50,817 [  29918] SEVERE - #kotlinx.coroutines.CoroutineScope - Failed to initialize PythonPackageManager for Python 3.14 (Chapter6) Version:Python 3.14.0 Path:(/home/ahmed/python/ML/Chapter6/.venv/bin/python)
+com.intellij.execution.process.ProcessNotCreatedException: Cannot run program "/home/ahmed/python/ML/Chapter6/.venv/bin/python": error=2, No such file or directory
+	at com.intellij.execution.configurations.GeneralCommandLine.createProcess(GeneralCommandLine.java:422)
+	at com.intellij.execution.target.local.LocalTargetEnvironment.createProcess(LocalTargetEnvironment.java:124)
+	at com.jetbrains.python.packaging.pip.PipPackageManagerEngine$runPackagingTool$2.invokeSuspend(PipPackageManagerEngine.kt:147)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.SoftLimitedDispatcher$Worker.run(SoftLimitedDispatcher.kt:130)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1183)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
+Caused by: java.io.IOException: Cannot run program "/home/ahmed/python/ML/Chapter6/.venv/bin/python": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at com.intellij.execution.configurations.GeneralCommandLine.createProcess(GeneralCommandLine.java:574)
+	at com.intellij.execution.configurations.GeneralCommandLine.startProcess(GeneralCommandLine.java:590)
+	at com.intellij.execution.configurations.GeneralCommandLine.startProcess(GeneralCommandLine.java:432)
+	at com.intellij.execution.configurations.GeneralCommandLine.createProcess(GeneralCommandLine.java:402)
+	... 10 more
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 15 more
+2025-12-12 15:16:50,825 [  29926] SEVERE - #kotlinx.coroutines.CoroutineScope - PyCharm 2025.2.0.1  Build #PY-252.23892.515
+2025-12-12 15:16:50,825 [  29926] SEVERE - #kotlinx.coroutines.CoroutineScope - JDK: 21.0.7; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2025-12-12 15:16:50,826 [  29927] SEVERE - #kotlinx.coroutines.CoroutineScope - OS: Linux
+2025-12-12 15:16:50,826 [  29927] SEVERE - #kotlinx.coroutines.CoroutineScope - Plugin to blame: Python Community Edition version: 252.23892.515
+2025-12-12 15:16:50,827 [  29928] SEVERE - #kotlinx.coroutines.CoroutineScope - Last Action: 
+2025-12-12 15:17:41,681 [  80782]   WARN - com.github.benmanes.caffeine.cache.LocalAsyncCache - Exception thrown during asynchronous load
+java.util.concurrent.CompletionException: java.net.ConnectException
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:113)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:952)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at com.intellij.util.net.PlatformHttpClient$DelegatingHttpClient.send(PlatformHttpClient.java:337)
+	at com.intellij.ide.RegionUrlMapper.doLoadMappingOrThrow(RegionUrlMapper.java:152)
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:109)
+	... 7 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1042)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:527)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:138)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:94)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:391)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:584)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:428)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:420)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:414)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:456)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:446)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:177)
+	at java.base/java.util.concurrent.CompletableFuture.completeAsync(CompletableFuture.java:2719)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsync(MultiExchange.java:300)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.sendAsync(HttpClientImpl.java:1050)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:931)
+	... 11 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:137)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:145)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:842)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:865)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 34 more
+2025-12-12 15:21:25,761 [ 304862]   WARN - com.github.benmanes.caffeine.cache.LocalAsyncCache - Exception thrown during asynchronous load
+java.util.concurrent.CompletionException: java.net.ConnectException
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:113)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:952)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at com.intellij.util.net.PlatformHttpClient$DelegatingHttpClient.send(PlatformHttpClient.java:337)
+	at com.intellij.ide.RegionUrlMapper.doLoadMappingOrThrow(RegionUrlMapper.java:152)
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:109)
+	... 7 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1042)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:527)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:138)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:94)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:391)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:584)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:428)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:420)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:414)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:456)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:446)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:177)
+	at java.base/java.util.concurrent.CompletableFuture.completeAsync(CompletableFuture.java:2719)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsync(MultiExchange.java:300)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.sendAsync(HttpClientImpl.java:1050)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:931)
+	... 11 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:137)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:145)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:842)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:865)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 34 more
+2025-12-12 15:21:25,928 [ 305029]   WARN - com.github.benmanes.caffeine.cache.LocalAsyncCache - Exception thrown during asynchronous load
+java.util.concurrent.CompletionException: java.net.ConnectException
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:113)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1491)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2073)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2035)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:952)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at com.intellij.util.net.PlatformHttpClient$DelegatingHttpClient.send(PlatformHttpClient.java:337)
+	at com.intellij.ide.RegionUrlMapper.doLoadMappingOrThrow(RegionUrlMapper.java:152)
+	at com.github.benmanes.caffeine.cache.CacheLoader.lambda$asyncLoad$0(CacheLoader.java:109)
+	... 7 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1042)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:527)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:138)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:94)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:391)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:584)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:428)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:420)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:414)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:456)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:446)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:177)
+	at java.base/java.util.concurrent.CompletableFuture.completeAsync(CompletableFuture.java:2719)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsync(MultiExchange.java:300)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.sendAsync(HttpClientImpl.java:1050)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:931)
+	... 11 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:137)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:145)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:842)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:865)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 34 more

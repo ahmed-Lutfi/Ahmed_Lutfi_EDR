@@ -1,0 +1,150 @@
+{% extends "web/dashboard_base.html" %}
+
+{% block title %}Rules · EDR Mini{% endblock %}
+{% block dash_title %}Detection rules{% endblock %}
+
+{% block content %}
+
+<div class="dash-page" data-dash-reveal>
+  <!-- Header -->
+  <header class="dash-section-header">
+    <p class="dash-section-kicker">Rules</p>
+    <h1 class="dash-section-title">
+      Rules written as short, readable sentences.
+    </h1>
+    <p class="dash-section-text">
+      These rules are simulated examples only. The goal is to shape how a future
+      rules catalogue could look and read, before connecting to any query engine.
+    </p>
+  </header>
+
+  <!-- Primary rules grid -->
+  <section
+    class="dash-grid dash-grid--3"
+    data-dash-reveal
+    style="--reveal-delay: 40ms"
+  >
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Rule · High</p>
+        <h2 class="dash-card__title">
+          When a low-privilege user moves laterally too fast.
+        </h2>
+      </header>
+      <p class="dash-card__text">
+        Flags credentials used on more than three new endpoints in a short
+        window, especially across different segments. Treats lateral movement
+        as a story, not a single event.
+      </p>
+      <p class="dash-card__meta">
+        Attached to: internal workstations · Simulated design rule.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Rule · Medium</p>
+        <h2 class="dash-card__title">
+          When office tools spawn shells in the dark.
+        </h2>
+      </header>
+      <p class="dash-card__text">
+        Surfaces office processes spawning command interpreters outside normal
+        business hours, or from unusual hosts. Keeps the language human-first.
+      </p>
+      <p class="dash-card__meta">
+        Attached to: laptops · Mixed platforms · Design-only behaviour.
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <p class="dash-card__eyebrow">Rule · Low</p>
+        <h2 class="dash-card__title">
+          When endpoints repeatedly knock on closed doors.
+        </h2>
+        </header>
+      <p class="dash-card__text">
+        Highlights repeated denied outbound connections to rare destinations,
+        starting as a low-level rule that can be tuned later.
+      </p>
+      <p class="dash-card__meta">
+        Attached to: gateways and edge nodes · Sample only.
+      </p>
+    </article>
+  </section>
+
+  <!-- Mapping table -->
+  <section class="dash-grid dash-grid--2" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Rule catalogue snapshot</h2>
+        <p class="dash-card__subtitle">
+          A compact view of how rules might connect to alerts and endpoints.
+        </p>
+      </header>
+
+      <div class="dash-table-wrapper">
+        <table class="dash-table dash-table--dense">
+          <thead>
+            <tr>
+              <th>Rule name</th>
+              <th>Level</th>
+              <th>Scope</th>
+              <th>Sample tag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lateral movement burst</td>
+              <td><span class="badge badge--high">High</span></td>
+              <td>Internal workstations</td>
+              <td>T1550 (simulated)</td>
+            </tr>
+            <tr>
+              <td>Office-to-shell after hours</td>
+              <td><span class="badge badge--medium">Medium</span></td>
+              <td>Corporate laptops</td>
+              <td>Child-process anomaly</td>
+            </tr>
+            <tr>
+              <td>Edge rare outbound</td>
+              <td><span class="badge badge--low">Low</span></td>
+              <td>Gateways &amp; edge</td>
+              <td>Rare-destination pattern</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">How this page should evolve</h2>
+        <p class="dash-card__subtitle">
+          A bridge between human language and detection logic.
+        </p>
+      </header>
+      <ul class="dash-list">
+        <li>
+          Each rule is written as a sentence so analysts can understand the
+          intent before seeing the query syntax.
+        </li>
+        <li>
+          Later, each card can link to a full rule detail view: query, fields,
+          attached alerts, and change history.
+        </li>
+        <li>
+          The catalogue can be filtered by level, platform, environment, or
+          owner without redesigning the layout.
+        </li>
+        <li>
+          In this static phase, everything is sample data only – no engine is
+          running underneath yet.
+        </li>
+      </ul>
+    </article>
+  </section>
+</div>
+
+{% endblock %}

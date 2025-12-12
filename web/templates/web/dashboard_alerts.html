@@ -1,0 +1,183 @@
+{% extends "web/dashboard_base.html" %}
+
+{% block title %}Alerts · EDR Mini{% endblock %}
+{% block dash_title %}Alerts collection{% endblock %}
+
+{% block content %}
+
+<div class="dash-page" data-dash-reveal>
+  <!-- Header -->
+  <header class="dash-section-header">
+    <p class="dash-section-kicker">Alerts</p>
+    <h1 class="dash-section-title">
+      A quiet list of simulated alerts, written as short narratives.
+    </h1>
+    <p class="dash-section-text">
+      Each row here is a small story about suspicious behavior: where it
+      happened, how loud it feels, and which rule would have caught it in a
+      future live system.
+    </p>
+  </header>
+
+  <!-- Filters + legend -->
+  <section
+    class="dash-toolbar"
+    data-dash-reveal
+    style="--reveal-delay: 40ms"
+  >
+    <div class="dash-filters" data-dash-filter-group>
+      <button
+        type="button"
+        class="dash-filter-pill dash-filter-pill--active"
+        data-level-filter="all"
+      >
+        All
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-level-filter="high"
+      >
+        High
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-level-filter="medium"
+      >
+        Medium
+      </button>
+      <button
+        type="button"
+        class="dash-filter-pill"
+        data-level-filter="low"
+      >
+        Low
+      </button>
+    </div>
+
+    <div class="dash-toolbar__legend">
+      <span class="badge badge--high">High</span>
+      <span class="badge badge--medium">Medium</span>
+      <span class="badge badge--low">Low</span>
+      <span class="dash-toolbar__legend-text">
+        Levels here are visual only in this static phase.
+      </span>
+    </div>
+  </section>
+
+  <!-- Alerts table -->
+  <section class="dash-table-wrapper" data-dash-reveal>
+    <table class="dash-table dash-table--dense" data-dash-alerts-table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Level</th>
+          <th>Endpoint</th>
+          <th>Rule</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-level="high">
+          <td>09:42</td>
+          <td><span class="badge badge--high">High</span></td>
+          <td>workstation-12</td>
+          <td>T1550 token misuse</td>
+          <td>
+            Credential reuse detected across two internal segments within a
+            short window.
+          </td>
+        </tr>
+        <tr data-level="medium">
+          <td>09:03</td>
+          <td><span class="badge badge--medium">Medium</span></td>
+          <td>laptop-04</td>
+          <td>Suspicious child process</td>
+          <td>
+            Office process spawning a command shell outside normal business
+            hours.
+          </td>
+        </tr>
+        <tr data-level="medium">
+          <td>08:17</td>
+          <td><span class="badge badge--medium">Medium</span></td>
+          <td>db-node-03</td>
+          <td>Admin tool from service</td>
+          <td>
+            Service account launching admin tooling from a non-interactive
+            session.
+          </td>
+        </tr>
+        <tr data-level="low">
+          <td>07:51</td>
+          <td><span class="badge badge--low">Low</span></td>
+          <td>gateway-edge</td>
+          <td>Rare outbound pattern</td>
+          <td>
+            Series of denied outbound connections to low-frequency IP space.
+          </td>
+        </tr>
+        <tr data-level="low">
+          <td>07:18</td>
+          <td><span class="badge badge--low">Low</span></td>
+          <td>lab-sensor-01</td>
+          <td>Low-signal sensor</td>
+          <td>
+            Endpoint reporting sporadic signals from a lab environment
+            segment.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Side notes / description -->
+  <section class="dash-grid dash-grid--2" data-dash-reveal>
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">How to read this table</h2>
+        <p class="dash-card__subtitle">
+          This is a design-only snapshot of how alerts might look.
+        </p>
+      </header>
+      <ul class="dash-list">
+        <li>
+          Each alert is expressed as a short sentence instead of a raw log
+          line.
+        </li>
+        <li>
+          The level column is meant to signal how “loud” the alert should feel
+          to a human.
+        </li>
+        <li>
+          Endpoint, rule, and summary are aligned so you can scan by any of
+          them without friction.
+        </li>
+        <li>
+          In a live system, you would be able to pivot from each row into a
+          deeper investigation view.
+        </li>
+      </ul>
+    </article>
+
+    <article class="dash-card">
+      <header class="dash-card__header">
+        <h2 class="dash-card__title">Future behavior</h2>
+        <p class="dash-card__subtitle">
+          What this page could do once wired to real data.
+        </p>
+      </header>
+      <p class="dash-card__text">
+        Filters at the top of the page are visual only for now, but they are
+        structured so they can later map directly to query parameters or
+        saved views without changing the layout.
+      </p>
+      <p class="dash-card__meta">
+        Designed to keep the bridge clean between UX and backend logic.
+      </p>
+    </article>
+  </section>
+</div>
+
+{% endblock %}

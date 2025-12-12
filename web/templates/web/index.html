@@ -1,0 +1,264 @@
+{% extends "web/base.html" %}
+
+{% block title %}EDR Mini · Detection Surface{% endblock %}
+
+{% block body_class %}layout-default layout-landing{% endblock %}
+
+{% block content %}
+<article class="landing">
+  <!-- Hero / Overview -->
+  <section  class="landing-hero">
+    <div class="landing-hero__content">
+      <p class="page-intro__eyebrow">Design-first security surface</p>
+      <h1 class="page-intro__title">
+        A minimal endpoint detection &amp; response experience.
+      </h1>
+      <p class="page-intro__muted">
+        EDR Mini turns noisy endpoint activity into a quiet, readable surface.
+        Designed for security teams who care about signal, not clutter.
+      </p>
+
+      <div class="landing-hero__meta">
+        <div class="meta-chip">
+          <span class="meta-chip__label">Phase</span>
+          <span class="meta-chip__value">Static web · Design only</span>
+        </div>
+        <div class="meta-chip">
+          <span class="meta-chip__label">Scope</span>
+          <span class="meta-chip__value">
+            Alerts · Endpoints · Rules · Users
+          </span>
+        </div>
+      </div>
+
+      <div class="landing-hero__actions">
+        <a href="{% url 'web:login' %}" class="btn btn--primary">
+          Open dashboard
+        </a>
+        <a href="#demo" class="btn btn--ghost">
+          Explore surface
+        </a>
+      </div>
+    </div>
+
+    <aside class="landing-hero__panel">
+      <div class="stat-panel">
+        <p class="stat-panel__label">Alerts today</p>
+        <p class="stat-panel__value">27</p>
+        <p class="stat-panel__hint">Simulated · design state</p>
+      </div>
+
+      <div class="stat-panel stat-panel--row">
+        <div>
+          <p class="stat-panel__label">Endpoints</p>
+          <p class="stat-panel__value stat-panel__value--small">184</p>
+        </div>
+        <div>
+          <p class="stat-panel__label">Active rules</p>
+          <p class="stat-panel__value stat-panel__value--small">36</p>
+        </div>
+      </div>
+
+      <div class="stat-panel stat-panel--tags">
+        <p class="stat-panel__label">View modes</p>
+        <div class="stat-tags">
+          <span class="stat-tag">Owner</span>
+          <span class="stat-tag">Analyst</span>
+          <span class="stat-tag">Read-only</span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Feed-style surface -->
+  <section id="features" class="landing-feed" aria-label="Detection surface">
+    <header class="landing-section-header">
+      <p class="landing-section-header__eyebrow">Detection surface</p>
+      <h2 class="landing-section-header__title">
+        A live narrative of what your endpoints are trying to tell you.
+      </h2>
+      <p class="landing-section-header__subtitle">
+        Four focused streams: alerts, endpoints, rules, and users — all sharing
+        one visual language.
+      </p>
+    </header>
+
+    <div class="landing-feed__list">
+      <!-- Alerts stream -->
+      <article class="feed-item feed-item--accent">
+        <div class="feed-item__timeline-dot"></div>
+
+        <div class="feed-item__type">Alerts</div>
+
+        <div class="feed-item__body">
+          <div class="feed-item__headline">
+            <h3 class="feed-item__title">
+              Lateral movement attempt from internal workstation.
+            </h3>
+            <span class="feed-pill feed-pill--level">High</span>
+          </div>
+
+          <p class="feed-item__text">
+            Suspicious credential usage detected across two segments. Designed
+            as a sample alert layout, not a live incident.
+          </p>
+
+          <div class="feed-item__meta">
+            <span class="feed-pill">MITRE T1550 (simulated)</span>
+            <span class="feed-pill feed-pill--soft">
+              Owner · Analyst triage lane
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Endpoints stream -->
+      <article class="feed-item" id="endpoints">
+        <div class="feed-item__timeline-dot"></div>
+
+        <div class="feed-item__type">Endpoints</div>
+
+        <div class="feed-item__body">
+          <div class="feed-item__headline">
+            <h3 class="feed-item__title">
+              184 endpoints, one consistent language.
+            </h3>
+            <span class="feed-pill feed-pill--soft">
+              Static data · Design phase
+            </span>
+          </div>
+
+          <p class="feed-item__text">
+            Each device is reduced to a compact set of signals: identity,
+            posture, recent pressure. Built to scale across fleets, not drown
+            you in noise.
+          </p>
+
+          <div class="feed-item__meta">
+            <span class="feed-pill">Windows</span>
+            <span class="feed-pill">Linux</span>
+            <span class="feed-pill">macOS</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Rules stream -->
+      <article class="feed-item" id="alerts">
+        <div class="feed-item__timeline-dot"></div>
+
+        <div class="feed-item__type">Rules</div>
+
+        <div class="feed-item__body">
+          <div class="feed-item__headline">
+            <h3 class="feed-item__title">
+              Rules written as sentences, not regex puzzles.
+            </h3>
+            <span class="feed-pill">36 active rules</span>
+          </div>
+
+          <p class="feed-item__text">
+            The rules catalogue reads like a book of “if this, then that”
+            stories with clear owners and scoped blast radius, ready for SOC
+            workflows.
+          </p>
+
+          <div class="feed-item__meta">
+            <span class="feed-pill">Owner · Analyst controls</span>
+            <span class="feed-pill feed-pill--soft">
+              Versioned · Review-friendly
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Users stream -->
+      <article class="feed-item" id="users">
+        <div class="feed-item__timeline-dot"></div>
+
+        <div class="feed-item__type">Users</div>
+
+        <div class="feed-item__body">
+          <div class="feed-item__headline">
+            <h3 class="feed-item__title">
+              Three roles, one shared surface.
+            </h3>
+            <span class="feed-pill">Role-based layouts</span>
+          </div>
+
+          <p class="feed-item__text">
+            Owner, analyst, and read-only views share the same visual language
+            with different levels of control. Boundaries are visible without
+            shouting.
+          </p>
+
+          <div class="feed-item__meta">
+            <span class="feed-pill">Owner</span>
+            <span class="feed-pill">Analyst</span>
+            <span class="feed-pill">Read-only</span>
+            <span class="feed-pill feed-pill--soft">Static · UX only</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- System grid / Docs + Demo -->
+  <section id="docs" class="landing-grid">
+    <header class="landing-section-header landing-section-header--tight">
+      <p class="landing-section-header__eyebrow">System map</p>
+      <h2 class="landing-section-header__title">
+        From alert to endpoint to rule, without losing the thread.
+      </h2>
+    </header>
+
+    <div class="landing-grid__layout">
+      <article class="grid-card grid-card--primary">
+        <p class="grid-card__eyebrow">Alert first</p>
+        <h3 class="grid-card__title">Start with an alert, not a dashboard.</h3>
+        <p class="grid-card__text">
+          The primary flow begins from an alert row, then fans out to the
+          endpoint, rule, and recent activity in a single track. The design is
+          quiet on purpose.
+        </p>
+        <ul class="grid-card__list">
+          <li>One column of text, no charts for the sake of charts.</li>
+          <li>Time, pressure, and impact expressed in words first.</li>
+          <li>Visuals added only where reading slows down.</li>
+        </ul>
+      </article>
+
+      <article class="grid-card">
+        <p class="grid-card__eyebrow">Endpoints</p>
+        <h3 class="grid-card__title">A readable inventory.</h3>
+        <p class="grid-card__text">
+          Endpoints are grouped by environment and risk posture, not
+          alphabetically. The surface suggests where to look without forcing it.
+        </p>
+      </article>
+
+      <article class="grid-card">
+        <p class="grid-card__eyebrow">Rules</p>
+        <h3 class="grid-card__title">Intent over syntax.</h3>
+        <p class="grid-card__text">
+          Rules are named after behavior, not field names. The UI allows
+          analysts to understand “why the rule exists” in a single sentence.
+        </p>
+      </article>
+
+      <article class="grid-card" id="demo">
+        <p class="grid-card__eyebrow">Demo session</p>
+        <h3 class="grid-card__title">Use it as your own SOC lab.</h3>
+        <p class="grid-card__text">
+          Connect the dashboard to a local agent and watch simulated alerts flow
+          in as you experiment on your own machine or virtual lab.
+        </p>
+        <ul class="grid-card__list">
+          <li>Perfect for personal study or university projects.</li>
+          <li>Show a full flow: from agent to UI.</li>
+          <li>Extend it later with more realistic logic.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</article>
+{% endblock %}
