@@ -1,19 +1,12 @@
-{% extends "web/base.html" %}
-
-{% block title %}Sign in · EDR Mini{% endblock %}
-
-{% block body_class %}layout-auth{% endblock %}
-
-{% block content %}
+{% extends "web/base.html" %} {% block title %}Sign in · EDR Mini{% endblock %}
+{% block body_class %}layout-auth{% endblock %} {% block content %}
 <section class="auth">
   <div class="auth-shell">
     <div class="auth-card">
       <!-- Left side copy -->
       <div class="auth-side">
         <p class="auth-eyebrow">Sign in</p>
-        <h1 class="auth-title">
-          Continue into a quiet detection surface.
-        </h1>
+        <h1 class="auth-title">Continue into a quiet detection surface.</h1>
         <p class="auth-text">
           EDR Mini is in its static web phase. This sign-in screen is a
           design-only view, not a live authentication flow yet.
@@ -42,8 +35,6 @@
       <!-- Right side form -->
       <div class="auth-form">
         <form method="post" class="auth-form__body">
-          {% csrf_token %}
-
           <div class="auth-form__header">
             <h2 class="auth-form__title">Sign in to EDR Mini</h2>
             <p class="auth-form__subtitle">
@@ -51,6 +42,18 @@
               applied after sign-in.
             </p>
           </div>
+          {% csrf_token %}
+           {% for field in form %}
+          <div class="form-field">
+            <label for="email" class="form-label">{{ field.label_tag }}</label>
+            
+             {{ field }} 
+             {% for error in field.errors %}
+            {{error}}
+             {% endfor %}
+          </div>
+          {% endfor %} {% comment %}
+          
 
           <div class="form-field">
             <label for="email" class="form-label">Email or username</label>
@@ -88,7 +91,9 @@
               />
             </div>
           </div>
-
+          --------------------------------------------------------------
+            """ FOR Majdi don't remove the following section """
+          --------------------------------------------------------------
           <div class="form-row form-row--between">
             <label class="checkbox">
               <input type="checkbox" name="remember" />
@@ -97,16 +102,18 @@
             <a href="#" class="form-label-link">Forgot password?</a>
           </div>
 
+          
+          {% endcomment %}
           <button type="submit" class="btn btn--primary auth-submit">
             Sign in
           </button>
 
           <div class="auth-footer-links">
-            <a href="{% url 'web:signup' %}" class="auth-footer-link">
-              signup
-            </a>
+            <a href="{% url 'accounts:signup' %}" class="auth-footer-link"> signup </a>
             <span class="auth-footer-dot">·</span>
-            <span class="auth-footer-muted">Static login · No real accounts</span>
+            <span class="auth-footer-muted"
+              >Static login · No real accounts</span
+            >
           </div>
         </form>
       </div>

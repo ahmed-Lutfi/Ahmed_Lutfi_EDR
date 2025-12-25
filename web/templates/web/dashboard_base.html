@@ -95,7 +95,7 @@
           </button>
 
           <div class="dash-topbar__breadcrumb">
-            <span class="dash-topbar__eyebrow">Dashboard</span>
+            <span class="dash-topbar__eyebrow">Dashboard Hi {{ user.username }}!</span>
             <span class="dash-topbar__title">
               {% block dash_title %}Detection surface{% endblock %}
             </span>
@@ -110,20 +110,19 @@
               >
                 Owner
               </button>
-              <button
-                type="button"
-                class="dash-role__pill"
-                data-role-pill
-              >
+              <button type="button" class="dash-role__pill" data-role-pill>
                 Analyst
               </button>
-              <button
-                type="button"
-                class="dash-role__pill"
-                data-role-pill
-              >
+              <button type="button" class="dash-role__pill" data-role-pill>
                 Read-only
               </button>
+
+              <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="dash-role__pill" data-role-pill>
+                  Log Out
+                </button>
+              </form>
             </div>
           </div>
         </header>

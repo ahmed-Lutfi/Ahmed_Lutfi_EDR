@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import (
-    Alerts,
-    Endpoints,
-    MaliciousActivity
-    )
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .models import Alerts, Endpoints, MaliciousActivity
 
 
 def home_view(request):
@@ -22,6 +21,7 @@ def signup_page(request):
 # Dashboard sections (static for now)
 
 
+@login_required
 def dashboard_overview(request):
     return render(request, "web/dashboard_overview.html", {"section": "overview"})
 
@@ -38,21 +38,22 @@ def dashboard_overview(request):
 #     return render(request, "web/dashboard_rules.html", {"section": "rules"})
 
 
+@login_required
 def dashboard_users(request):
     return render(request, "web/dashboard_users.html", {"section": "users"})
 
 
 # Changing to classes
-class AlertsListView(ListView):
+class AlertsListView(LoginRequiredMixin, ListView):
     model = Alerts
     template_name = "alerts_list.html"
 
 
-class EndpointsListView(ListView):
+class EndpointsListView(LoginRequiredMixin, ListView):
     model = Endpoints
     template_name = "endpoints_list.html"
 
 
-class MaliciousActiviyListView(ListView):
+class MaliciousActiviyListView(LoginRequiredMixin, ListView):
     model = MaliciousActivity
     template_name = "maliciousactivity_list.html"

@@ -39,7 +39,7 @@
       </div>
 
       <!-- Right side -->
-      <form class="auth-form">
+      <form method='post' class="auth-form">
         <div class="auth-form__body">
           <header class="auth-form__header">
             <h2 class="auth-form__title">Create your account</h2>
@@ -47,8 +47,29 @@
               All fields are part of the static UX prototype.
             </p>
           </header>
+          
+         
+            {% csrf_token %}
 
-          <!-- Full name -->
+            
+            {% for field in form %}
+             <div class="form-field"> 
+              {{ field.label_tag }}
+              {{ field }}
+              
+              {% if field.errors %}
+                <p class="error-text" style="color: red;">{{ field.errors.as_text }}</p>
+              {% endif %}
+                
+              </div>
+            {% endfor %}
+
+            <button class="btn btn--primary auth-submit" type="submit">
+            Create account
+          </button>
+              
+
+          {% comment %} <!-- Full name -->
           <div class="form-field">
             <label class="form-label" for="name">Full name</label>
             <input
@@ -110,11 +131,11 @@
 
           <button class="btn btn--primary auth-submit" type="submit">
             Create account
-          </button>
+          </button> {% endcomment %}
 
           <div class="auth-footer-links">
             <span class="auth-footer-muted">Already have an account?</span>
-            <a href="{% url 'web:login' %}" class="auth-footer-link">Sign in</a>
+            <a href="{% url 'accounts:login' %}" class="auth-footer-link">Sign in</a>
           </div>
         </div>
       </form>

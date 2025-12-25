@@ -15,8 +15,8 @@ app_name = "web"
 
 urlpatterns = [
     path("", home_view, name="index"),
-    path("login/", login_page, name="login"),
-    path("signup/", signup_page, name="signup"),
+#    path("login/", login_page, name="login"),
+#    path("signup/", signup_page, name="signup"),
     # Dashboard sections
     path("dashboard/", dashboard_overview, name="dashboard_overview"),
     path("dashboard/alerts/", AlertsListView.as_view(), name="alerts_list"),
