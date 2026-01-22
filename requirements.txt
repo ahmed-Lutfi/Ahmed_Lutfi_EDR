@@ -9,3 +9,4 @@ platformdirs==4.5.1
 pytokens==0.3.0
 sqlparse==0.5.3
 whitenoise==6.11.0
+gunicorn
