@@ -255,11 +255,14 @@ a {
 }
 
 /* Header CTA container */
+
 .site-header__cta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
+
 
 /* Mobile nav toggle (JS toggles .nav-toggle--active) */
 .nav-toggle {
@@ -1095,6 +1098,8 @@ a {
    RESPONSIVE BREAKPOINTS
    ========================================= */
 
+
+   
 @media (max-width: 880px) {
   .site-header__inner {
     gap: 1rem;
@@ -1121,6 +1126,10 @@ a {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+  }
+
+  .site-nav__item--mobile {
+    display: block;
   }
 
   .site-header__cta {

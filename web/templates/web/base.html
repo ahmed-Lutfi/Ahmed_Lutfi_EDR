@@ -16,16 +16,14 @@
 
     {% block extra_head %}{% endblock %}
   </head>
+
   <body class="{% block body_class %}layout-default{% endblock %}">
     <div class="page-shell">
-      <!-- Top progress bar -->
-      <div class="scroll-indicator">
-        <div class="scroll-indicator__bar"></div>
-      </div>
 
       <!-- Header -->
       <header class="site-header" data-header>
         <div class="site-header__inner">
+
           <!-- Brand -->
           <a href="{% url 'web:index' %}" class="brand">
             <span class="brand__mark">EM</span>
@@ -40,45 +38,40 @@
           <!-- Primary navigation -->
           <nav class="site-nav" aria-label="Primary navigation">
             <ul class="site-nav__list" data-nav-menu>
+
               <li class="site-nav__item">
-                <a
-                  href="{% url 'web:index' %}#overview"
-                  class="site-nav__link"
-                  data-nav-link
-                >
+                <a href="{% url 'web:index' %}#overview" class="site-nav__link">
                   Overview
                 </a>
               </li>
+
               <li class="site-nav__item">
-                <a
-                  href="{% url 'web:index' %}#features"
-                  class="site-nav__link"
-                  data-nav-link
-                >
+                <a href="{% url 'web:index' %}#features" class="site-nav__link">
                   Features
                 </a>
               </li>
+
               <li class="site-nav__item">
-                <a
-                  href="{% url 'web:index' %}#docs"
-                  class="site-nav__link"
-                  data-nav-link
-                >
+                <a href="{% url 'web:index' %}#docs" class="site-nav__link">
                   Docs
                 </a>
               </li>
+
+              <!-- Auth / Actions (single source – no duplication) -->
+              <li class="site-nav__item site-nav__item--mobile">
+                <a href="{% url 'accounts:login' %}" class="btn btn--ghost">
+                  Sign in
+                </a>
+              </li>
+
+              <li class="site-nav__item site-nav__item--mobile">
+                <a href="{% url 'web:index' %}#demo" class="btn btn--primary">
+                  Watch demo
+                </a>
+              </li>
+
             </ul>
           </nav>
-
-          <!-- Header actions -->
-          <div class="site-header__cta">
-            <a href="{% url 'accounts:login' %}" class="btn btn--ghost">
-              Sign in
-            </a>
-            <a href="{% url 'web:index' %}#demo" class="btn btn--primary">
-              Watch demo
-            </a>
-          </div>
 
           <!-- Mobile nav toggle -->
           <button
@@ -91,6 +84,7 @@
             <span class="nav-toggle__line"></span>
             <span class="nav-toggle__line"></span>
           </button>
+
         </div>
       </header>
 
@@ -124,11 +118,12 @@
           <div class="site-footer__col">
             <p class="footer-label">Status</p>
             <p class="footer-copy footer-copy--muted">
-              Design-first static web phase &middot; No live data yet.
+              Design-first static web phase · No live data yet.
             </p>
           </div>
         </div>
       </footer>
+
     </div>
 
     <script src="{% static 'web/js/main.js' %}" defer></script>
